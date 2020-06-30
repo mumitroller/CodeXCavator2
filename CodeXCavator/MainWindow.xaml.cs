@@ -28,6 +28,7 @@ using System.Windows.Shapes;
 using System.IO.IsolatedStorage;
 using System.IO;
 using CodeXCavator.Engine.Interfaces;
+using System.Globalization;
 
 //This file has been significantly modified by Ben van der Merwe
 //
@@ -149,7 +150,7 @@ namespace CodeXCavator
                 using (StreamWriter writer = new StreamWriter(stream))
                 {
                     // Write restore bounds value to file
-                    writer.WriteLine(this.RestoreBounds.ToString());
+                    writer.WriteLine(this.RestoreBounds.ToString(CultureInfo.InvariantCulture));
                 }
             }
             catch { }
